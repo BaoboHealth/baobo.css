@@ -1,0 +1,28 @@
+{
+  "name": "beibocss",
+  "version": "0.0.1",
+  "homepage": "http://yellowdi.github.io/Elenore",
+  "authors": [
+    "BeiboHealth <beibaohealth@outlook.com>"
+  ],
+  "description": "Beibo CSS framework",
+  "main": "beibo.sass",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "images"
+  ],
+  "private": true
+}

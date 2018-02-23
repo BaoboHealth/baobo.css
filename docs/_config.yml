@@ -1,0 +1,19 @@
+# Meta
+
+title:         "Beibo.css"
+description:   "Beibo CSS framework"
+
+# Build
+
+markdown:      kramdown
+permalink:     pretty
+url:           https://beibohealth.github.io/beibo.css
+exclude:       ['icons', 'node_modules', 'templates', '.babelrc', 'beibo-docs.sass', 'docker-compose.yml', 'package.json', 'yarn.lock']
+
+# Variables
+
+documentation: "/documentation/overview/start/"
+download:      https://github.com/BeiboHealth/beibo.css/archive/0.0.1.zip
+github:        https://github.com/BeiboHealth/beibo.css
+twitter:       https://twitter.com/BeiboHealth
+version:       0.0.1
