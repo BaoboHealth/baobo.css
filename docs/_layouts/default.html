@@ -1,8 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="Zh-cn">
   {% include head.html %}
-  <body>
+  <body class="layout-{{ page.layout }}{% if page.doc-tab %} page-{{ page.doc-tab}}{% endif %}">
+
+    <section class="hero is-small is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <img src="{{ site.url }}/assets/w-logo.png" alt="{{ site.title }}" width="112">
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    {% include navbar.html id="Documentation" has_container=true %}
+
     {{ content }}
+
+    <section class="section">
+      <div class="container">
+        <p class="has-text-centered has-text-grey-light">
+          This page is <strong class="has-text-grey">open source</strong>.
+          <a class="has-text-grey" href="https://github.com/yellowdi/elenore/blob/master/docs/{{ page.path }}" style="border-bottom: 1px solid currentColor;">
+            View on GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+
     {% include footer.html %}
+
   </body>
 </html>
