@@ -4,4 +4,199 @@ route: index
 fixed_navbar: true
 doc-subtab: index
 ---
-{% include intro.html %}
+
+{% capture scss_code %}
+// 1. Import the initial variables
+@import "../sass/utilities/initial-variables";
+@import "../sass/utilities/functions";
+
+// 2. Set your own initial variables
+// Update blue
+$blue: #72d0eb;
+// Add pink and its invert
+$pink: #ffb3b3;
+$pink-invert: #fff;
+// Add a serif family
+$family-serif: "Merriweather", "Georgia", serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+// Use the existing orange as the danger color
+$danger: $orange;
+// Use the new serif family
+$family-primary: $family-serif;
+
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+// 5. Add new color variables to the color map.
+@import "../sass/utilities/derived-variables.sass";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Beibo.css
+@import "../beibo";
+{% endcapture %}
+
+{% capture button_example %}
+<a class="button">
+  Button
+</a>
+{% endcapture %}
+
+{% capture button_primary_example %}
+<a class="button is-primary">
+  Button
+</a>
+{% endcapture %}
+
+{% capture button_size_example %}
+<a class="button is-primary is-medium">
+  Button
+</a>
+{% endcapture %}
+
+{% capture button_style_example %}
+<a class="button is-primary is-medium is-outlined">
+  Button
+</a>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">欢迎使用 Beibo.css</h1>
+
+    <div class="content">
+      <p>
+        <strong>Beibo.css</strong> 是一款开源的 <strong>CSS</strong> 框架，基于 <strong>Flexbox</strong> 使用 <strong>Sass</strong> 开发。拥有先进的响应式支持和众多可自定义组件，帮助开发者快速实现响应式布局、移动设备优先的 Web 项目。
+      </p>
+    </div>
+
+    {% include anchor.html name="概览" %}
+
+    <div class="content">
+      <p>
+        为了确保 Beibo.css 各项功能正常工作，你需要在项目开始之前确保已完成以下这些步骤。
+      </p>
+    </div>
+
+    <article class="media is-large">
+      <div class="media-left">
+        <p class="title is-5">1</p>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">
+          使用 <strong>HTML5 文档类型</strong>
+        </p>
+        {% highlight html %}<!DOCTYPE html>{% endhighlight %}
+      </div>
+    </article>
+
+    <article class="media is-large">
+      <div class="media-left">
+        <p class="title is-5">2</p>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">
+          在 <code>head</code> 之中添加 <strong>viewport</strong> 元数据标签
+        </p>
+        {% highlight html %}<meta name="viewport" content="width=device-width, initial-scale=1">{% endhighlight %}
+      </div>
+    </article>
+
+    <br>
+
+    <div class="message is-info">
+      <div class="message-header">
+        Font Awesome icons
+      </div>
+      <div class="message-body">
+        <p>Beibo.css 并不内置图标，如果你想要使用它们别忘了引入 <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a>：</p>
+        {% highlight html %}<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="自定义" %}
+
+    <div class="content">
+      <p>
+        如果你熟悉 <a href="http://sass-lang.com/">Sass</a>，那么自定义 Beibo.css 将非常容易。下面将通过 <code>mystyles.scss</code> 文件示范如何添加颜色和修改字体。
+      </p>
+      <div class="highlight-full">
+        {% highlight sass %}{{ scss_code }}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="修饰符" %}
+
+    <div class="content">
+      <p>
+        大多数 Beibo.css 提供的元素和组件都拥有<strong>其他</strong>样式，要使用它们你只需要添加一个<strong>修饰符</strong>，比如 <code>is-</code> 或 <code>has-</code>。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <p>我们用一个简单的 <code>button</code> 做个演示：</p>
+      </div>
+      <div class="column">
+        <p>
+          {{button_example}}
+        </p>
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_example}}{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <p>通过添加一个<strong>修饰符</strong> <code>is-primary</code> 来修改按钮的<strong>颜色</strong>：</p>
+      </div>
+      <div class="column">
+        <p>
+          {{button_primary_example}}
+        </p>
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_primary_example}}{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>当然修改按钮的<strong>尺寸</strong>也是一样的，比如添加 <code>is-medium</code>：</p>
+        </div>
+      </div>
+      <div class="column">
+        {{button_size_example}}
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_size_example}}{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>另外也可以通过修饰符转变<strong>其他风格</strong>或<strong>状态</strong>，比如 <code>is-outlined</code>：</p>
+        </div>
+      </div>
+      <div class="column">
+        {{button_style_example}}
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_style_example}}{% endhighlight %}
+      </div>
+    </div>
+  </div>
+</section>

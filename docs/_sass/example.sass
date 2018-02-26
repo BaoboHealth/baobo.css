@@ -233,3 +233,84 @@ $structure-invert: $danger-invert
       border-left: none
       border-radius: 0
       border-right: none
+
+.el-special-shadow
+  background-image: linear-gradient(rgba(#000, 0.1), rgba(#000, 0))
+  height: 8px
+  left: 0
+  opacity: 0
+  position: absolute
+  right: 0
+  top: 100%
+  transform: scaleY(0)
+  transform-origin: center top
+
++touch
+  .el-is-clipped-touch
+    overflow: hidden !important
+
+#images
+  tr
+    td:nth-child(2)
+      width: 320px
+
+.el-color
+  border-radius: 2px
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+  display: inline-block
+  float: left
+  height: 24px
+  margin-right: 8px
+  width: 24px
+
+.el-feature-title
+  color: $text-light
+  a
+    border-bottom: 1px solid transparent
+    color: $text-strong
+    &:hover
+      border-bottom-color: $primary
+
+.el-anchor-title
+  padding-top: 1.5rem
+  position: relative
+  +until($widescreen)
+    padding-left: 2rem
+
+.el-anchor-link
+  position: absolute
+  right: calc(100% + 1rem)
+  +until($widescreen)
+    left: 0
+    right: auto
+
+$notification-background-color: $background !default
+$notification-radius: $radius !default
+$notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default
+
+.el-notification
+  background-color: $background
+  border-radius: $radius
+  padding: 1.25rem 0
+  position: relative
+  text-align: center
+  .title,
+  .subtitle,
+  .content,
+  strong
+    color: currentColor
+  code,
+  pre
+    background: $white
+  pre code
+    background: transparent
+  // Colors
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.is-#{$name}
+      background-color: $color
+      color: $color-invert
+
+.el-icon-size .icon
+  background-color: $yellow

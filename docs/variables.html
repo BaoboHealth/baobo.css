@@ -3,5 +3,133 @@ layout: default
 route: variables
 fixed_navbar: true
 doc-subtab: variables
+colors:
+- white
+- black
+- light
+- dark
+- primary
+- info
+- success
+- warning
+- danger
 ---
-{% include intro.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">变量</h1>
+
+    <div class="content">
+      <p>
+        Beibo.css 有 <strong>2</strong> 个变量控制文件，分为 <strong>4</strong> 个部分。
+      </p>
+    </div>
+
+    {% assign initial_variables = site.data.variables.utilities.initial-variables %}
+    {% assign initial_vars      = initial_variables.vars %}
+    {% assign derived_variables = site.data.variables.utilities.derived-variables %}
+    {% assign derived_vars      = derived_variables.vars %}
+
+    {% include anchor.html name="初始变量" %}
+
+    <table class="table is-bordered is-striped">
+      <tbody>
+      {% for variable_hash in initial_vars %}
+        {% assign variable    = variable_hash[1] %}
+        {% assign starts_with = variable.value | slice: 0, 3 %}
+        <tr>
+          <td>
+            <code style="white-space: nowrap;">{{ variable.name }}</code>
+          </td>
+          <td>
+            {% if starts_with == 'hsl' %}
+              <span class="el-color" style="background: {{ variable.value }};"></span>
+            {% endif %}
+            <code>{{ variable.value }}</code>
+          </td>
+        </tr>
+      {% endfor %}
+      <tbody>
+    </table>
+
+    {% include anchor.html name="派生变量" %}
+
+    <table class="table is-bordered is-striped">
+      <tbody>
+      {% for derived_hash in derived_vars %}
+        {% assign derived    = derived_hash[1] %}
+        {% assign starts_with = derived.value | slice: 0, 3 %}
+        <tr>
+          <td>
+            <code style="white-space: nowrap;">{{ derived.name }}</code>
+          </td>
+          <td>
+            {% if starts_with == 'hsl' %}
+              <span class="el-color" style="background: {{ derived.value }};"></span>
+            {% endif %}
+            <code>{{ derived.value }}</code>
+          </td>
+        </tr>
+      {% endfor %}
+      <tbody>
+    </table>
+
+    {% include anchor.html name="颜色" %}
+
+    <div class="content">
+      <p>
+        Beibo.css 的大多数元素和组件都支持修饰符语法，通过 <strong>Sass map</strong> 你可以使用 <code>is-primary</code> 或者 <code>is-dark</code> 去定义颜色。
+      </p>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>颜色</th>
+          <th>变量</th>
+          <th>值</th>
+          <th>默认颜色</th>
+          <th>反转值</th>
+          <th>默认反转颜色</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for color in page.colors %}
+          {% assign derivedColor = site.data.colors.derived | where: "id", color | first %}
+          {% assign initialColor = site.data.colors.initial | where: "id", derivedColor.valueId | first %}
+          <tr>
+            <td>
+              <strong>{{ derivedColor.id | capitalize }}</strong>
+            </td>
+            <td>
+              <code>${{ derivedColor.id }}</code>
+            </td>
+            <td>
+              <code>${{ initialColor.id }}</code>
+            </td>
+            <td>
+              {% include elements/color-square.html value=initialColor.value %}
+            </td>
+            {% if derivedColor.invertValue %}
+              <td>
+                <code>{{ derivedColor.invertValue }}</code>
+              </td>
+              <td>
+                {% include elements/color-square.html value=derivedColor.invertValue %}
+              </td>
+            {% elsif derivedColor.invertId %}
+              {% assign invertColor = site.data.colors.initial | where: "id", derivedColor.invertId | first %}
+              <td>
+                <code>${{ derivedColor.invertId }}</code>
+              </td>
+              <td>
+                {% include elements/color-square.html value=invertColor.value %}
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

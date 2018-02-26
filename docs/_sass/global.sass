@@ -1,28 +1,19 @@
-#placeholder
-  display: block
-  font-size: 14px
-  line-height: 1.2
+.content
+  .el-spaced
+    li + li
+      margin-top: 1em
+  .highlighter-rouge
+    &:not(:last-child)
+      margin-bottom: 1.5rem
 
-.placeholder-image
-  height: calc(100px + 1rem)
-  padding: 1rem 1rem 0
-  div
-    background: $background
-    height: 100px
-    width: 210px
+.content .highlight
+  margin-left: 0
+  margin-right: 0
+  text-align: left
+  &:not(:first-child)
+    margin-top: 1em
+  &:not(:last-child)
+    margin-bottom: 1em
 
-.placeholder-content
-  padding: 0.5rem 1rem 0
-  div
-    background: $background
-    height: 1em
-    margin-bottom: 0.2em
-    &:last-child
-      width: 30%
-
-.placeholder-footer
-  padding: 0.5rem 1rem 1rem
-  div
-    background: $background
-    height: 1em
-    width: 40%
+.content li .highlight
+  margin-top: 0.5em

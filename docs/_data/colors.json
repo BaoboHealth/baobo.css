@@ -1,0 +1,142 @@
+{
+  "initial": [
+    {
+      "id":"black",
+      "name":"Black",
+      "value": "hsl(0, 0%, 4%)"
+    },
+    {
+      "id":"black-bis",
+      "name":"Black bis",
+      "value": "hsl(0, 0%, 7%)"
+    },
+    {
+      "id":"black-ter",
+      "name":"Black ter",
+      "value": "hsl(0, 0%, 14%)"
+    },
+    {
+      "id":"grey-darker",
+      "name":"Grey darker",
+      "value": "hsl(0, 0%, 21%)"
+    },
+    {
+      "id":"grey-dark",
+      "name":"Grey dark",
+      "value": "hsl(0, 0%, 29%)"
+    },
+    {
+      "id":"grey",
+      "name":"Grey",
+      "value": "hsl(0, 0%, 48%)"
+    },
+    {
+      "id":"grey-light",
+      "name":"Grey light",
+      "value": "hsl(0, 0%, 71%)"
+    },
+    {
+      "id":"grey-lighter",
+      "name":"Grey lighter",
+      "value": "hsl(0, 0%, 86%)"
+    },
+    {
+      "id":"white-ter",
+      "name":"White ter",
+      "value": "hsl(0, 0%, 96%)"
+    },
+    {
+      "id":"white-bis",
+      "name":"White bis",
+      "value": "hsl(0, 0%, 98%)"
+    },
+    {
+      "id":"white",
+      "name":"White",
+      "value": "hsl(0, 0%, 100%)"
+    },
+    {
+      "id":"orange",
+      "name":"Orange",
+      "value": "hsl(33, 98%, 63%)"
+    },
+    {
+      "id":"yellow",
+      "name":"Yellow",
+      "value": "hsl(46, 99%, 61%)"
+    },
+    {
+      "id":"green",
+      "name":"Green",
+      "value": "hsl(164, 58%, 44%)"
+    },
+    {
+      "id":"blue",
+      "name":"Blue",
+      "value": "hsl(210, 100%, 55%)"
+    },
+    {
+      "id":"indigo",
+      "name":"Indigo",
+      "value": "hsl(225, 55%, 56%)"
+    },
+    {
+      "id":"purple",
+      "name":"Purple",
+      "value": "hsl(247, 40%, 58%)"
+    },
+    {
+      "id":"red",
+      "name":"red",
+      "value": "hsl(348, 100%, 61%)"
+    }
+  ],
+  "derived": [
+    {
+      "id": "white",
+      "valueId": "white",
+      "invertId": "black"
+    },
+    {
+      "id": "black",
+      "valueId": "black",
+      "invertId": "white"
+    },
+    {
+      "id": "light",
+      "valueId": "white-ter",
+      "invertId": "grey-darker"
+    },
+    {
+      "id": "dark",
+      "valueId": "grey-darker",
+      "invertId": "white-ter"
+    },
+    {
+      "id": "primary",
+      "valueId": "blue",
+      "invertValue": "#fff"
+    },
+    {
+      "id": "info",
+      "valueId": "indigo",
+      "invertValue": "#fff"
+    },
+    {
+      "id": "success",
+      "valueId": "green",
+      "invertValue": "#fff"
+    },
+    {
+      "id": "warning",
+      "valueId": "yellow",
+      "invertValue": "rgba(0, 0, 0, 0.7)"
+    },
+    {
+      "id": "danger",
+      "valueId": "red",
+      "invertValue": "#fff"
+    }
+  ],
+  "justColors": ["primary", "link", "info", "success", "warning", "danger"]
+}
