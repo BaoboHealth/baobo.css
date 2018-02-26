@@ -1,4 +1,4 @@
-# Beibo.css Changelog
+# Baobo.css Changelog
 
 ## 0.0.1
 
