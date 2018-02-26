@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "beibo.css",
+	"file": "baobo.css",
 	"sources": [
-		"../beibo.sass",
+		"../baobo.sass",
 		"../sass/utilities/_all.sass",
 		"../sass/utilities/initial-variables.sass",
 		"../sass/utilities/functions.sass",

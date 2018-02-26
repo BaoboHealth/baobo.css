@@ -1,8 +1,8 @@
 {
-  "name": "beibocss-docs",
+  "name": "baobocss-docs",
   "version": "0.0.1",
   "main": "index.html",
-  "author": "BeiboHealth <beibaohealth@outlook.com>",
+  "author": "BaoboHealth <baobohealth@outlook.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
