@@ -1,0 +1,89 @@
+---
+layout: default
+route: layout
+fixed_navbar: true
+doc-subtab: layout
+---
+
+{% capture container_example %}
+<div class="container">
+  <div class="notification">
+    This container is <strong>centered</strong> on desktop.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_fluid_example %}
+<div class="container is-fluid">
+  <div class="notification">
+    This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
+    viewport size.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_widescreen_example %}
+<div class="container is-widescreen">
+  <div class="notification">
+    This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_fullhd_example %}
+<div class="container is-fullhd">
+  <div class="notification">
+    This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+  </div>
+</div>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">布局</h1>
+
+    <div class="content">
+      <p></p>
+    </div>
+
+    {% include anchor.html name="容器" %}
+
+    <div class="content">
+      <p>
+        Baobo.css 需要为页面内容和阵列系统包裹一个 <code>.container</code> 容器。每一个容器的<strong>宽度</strong>都基于一个固定的公式：<code>$device - (2 * $gap)</code>。<code>$gap</code> 的默认值为 <code>
+        32px</code>，当然你可以修改它。
+      </p>
+      <p>This is how the container will behave:</p>
+      <ul>
+        <li><code>$desktop</code> 最宽为 <strong>960px</strong></li>
+        <li><code>$widescreen</code> 最宽为 <strong>1152px</strong></li>
+        <li><code>$fullhd</code> 最宽为 <strong>1344px</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="el-example is-fullwidth">
+  {{container_example}}
+</div>
+
+{% highlight html %}{{container_example}}{% endhighlight %}
+
+<div class="el-example is-fullwidth">
+  {{container_fluid_example}}
+</div>
+
+{% highlight html %}{{container_fluid_example}}{% endhighlight %}
+
+<div class="el-example is-fullwidth">
+  {{container_widescreen_example}}
+</div>
+
+{% highlight html %}{{container_widescreen_example}}{% endhighlight %}
+
+<div class="el-example is-fullwidth">
+  {{container_fullhd_example}}
+</div>
+
+{% highlight html %}{{container_fullhd_example}}{% endhighlight %}

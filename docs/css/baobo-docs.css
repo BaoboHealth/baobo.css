@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!  Baobo.css v0.0.1 | MIT License | github.com/BaoboHealth/baobo.css */
 /*! Illuminate.css v0.0.3 | MIT License | github.com/YellowDi/Illuminate.css */
 html,
@@ -2734,6 +2735,97 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 
 .content.is-large {
   font-size: 1.5rem;
+}
+
+.notification {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  position: relative;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.notification a:not(.button) {
+  color: currentColor;
+  text-decoration: underline;
+}
+
+.notification strong {
+  color: currentColor;
+}
+
+.notification code,
+.notification pre {
+  background: white;
+}
+
+.notification pre code {
+  background: transparent;
+}
+
+.notification > .delete {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.notification .title,
+.notification .subtitle,
+.notification .content {
+  color: currentColor;
+}
+
+.notification.is-white {
+  background-color: white;
+  color: #0a0a0a;
+}
+
+.notification.is-black {
+  background-color: #0a0a0a;
+  color: white;
+}
+
+.notification.is-light {
+  background-color: whitesmoke;
+  color: #292929;
+}
+
+.notification.is-dark {
+  background-color: #292929;
+  color: whitesmoke;
+}
+
+.notification.is-primary {
+  background-color: #007ee6;
+  color: whitesmoke;
+}
+
+.notification.is-link {
+  background-color: #292929;
+  color: whitesmoke;
+}
+
+.notification.is-info {
+  background-color: #5170cd;
+  color: #fff;
+}
+
+.notification.is-success {
+  background-color: #2fb18f;
+  color: #fff;
+}
+
+.notification.is-warning {
+  background-color: #fed039;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.notification.is-danger {
+  background-color: #ff3860;
+  color: #fff;
 }
 
 .title,
@@ -7476,7 +7568,7 @@ a.navbar-link.is-active {
   border-radius: 3px 3px 0 0;
   bottom: 100%;
   color: rgba(0, 0, 0, 0.7);
-  content: "Example";
+  content: "案例";
   display: inline-block;
   font-size: 7px;
   font-weight: bold;
