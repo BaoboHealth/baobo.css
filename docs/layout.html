@@ -42,6 +42,21 @@ doc-subtab: layout
 </nav>
 {% endcapture %}
 
+{% capture hero_example %}
+<section class="hero is-medium is-light is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">
+        Hero title
+      </p>
+      <p class="subtitle">
+        Hero subtitle
+      </p>
+    </div>
+  </div>
+</section>
+{% endcapture %}
+
 <section class="section">
   <div class="container">
     <h1 class="title">布局</h1>
@@ -50,7 +65,7 @@ doc-subtab: layout
       <p></p>
     </div>
 
-    {% include anchor.html name="容器" %}
+    {% include anchor.html name="Container" %}
 
     <div class="content">
       <p>
@@ -65,19 +80,9 @@ doc-subtab: layout
       </ul>
     </div>
 
-  </div>
-</section>
+    {% highlight html %}{{container_example}}{% endhighlight %}
 
-<div class="el-example is-fullwidth">
-  {{container_example}}
-</div>
-
-{% highlight html %}{{container_example}}{% endhighlight %}
-
-<section class="section">
-  <div class="container">
-
-    {% include anchor.html name="水平布局" %}
+    {% include anchor.html name="Level" %}
 
     <div class="content">
       <p>
@@ -107,5 +112,22 @@ doc-subtab: layout
 
     {% include snippet.html content=nav_example horizontal=true more=true %}
 
+    {% include anchor.html name="Hero" %}
+
+    <div class="content">
+      <p>
+        横幅支持不同大小和颜色。
+      </p>
+    </div>
   </div>
+
+</section>
+
+<section class="section is-fullwidth">
+  <div class="el-example">
+    {{ hero_example }}
+  </div>
+
+{% highlight html %}{{ hero_example }}{% endhighlight %}
+
 </section>
