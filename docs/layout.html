@@ -13,6 +13,19 @@ doc-subtab: layout
 </div>
 {% endcapture %}
 
+{% capture section_example %}
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Section</h1>
+      <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+      </h2>
+    </div>
+  </section>
+</body>
+{% endcapture %}
+
 {% capture nav_example %}
 <nav class="level">
   <div class="level-item has-text-centered">
@@ -72,7 +85,6 @@ doc-subtab: layout
         Baobo.css 需要为页面内容和阵列系统包裹一个 <code>.container</code> 容器。每一个容器的<strong>宽度</strong>都基于一个固定的公式：<code>$device - (2 * $gap)</code>。<code>$gap</code> 的默认值为 <code>
         32px</code>，当然你可以修改它。
       </p>
-      <p>This is how the container will behave:</p>
       <ul>
         <li><code>$desktop</code> 最宽为 <strong>960px</strong></li>
         <li><code>$widescreen</code> 最宽为 <strong>1152px</strong></li>
@@ -81,6 +93,16 @@ doc-subtab: layout
     </div>
 
     {% highlight html %}{{container_example}}{% endhighlight %}
+
+    {% include anchor.html name="Section" %}
+
+    <div class="content">
+      <p>
+        一个简单的容器，可将您的页面分成不同的部分，例如您正在阅读的部分。你可以通过添加 <code>is-medium</code> 或者 <code>is-large</code> 来更改<strong>间距</strong>。
+      </p>
+    </div>
+
+    {% highlight html %}{{section_example}}{% endhighlight %}
 
     {% include anchor.html name="Level" %}
 
