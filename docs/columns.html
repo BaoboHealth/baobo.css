@@ -1,0 +1,308 @@
+---
+layout: default
+route: layout
+fixed_navbar: true
+doc-subtab: layout
+---
+
+{% capture columns %}
+<div class="columns">
+  <div class="column">
+    First column
+  </div>
+  <div class="column">
+    Second column
+  </div>
+  <div class="column">
+    Third column
+  </div>
+  <div class="column">
+    Fourth column
+  </div>
+</div>
+{% endcapture %}
+
+{% capture columns_sizes %}
+<div class="columns">
+  <div class="column is-four-fifths">
+    <p class="el-notification is-info">
+      <code class="html">is-four-fifths</code>
+    </p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-half">
+    <p class="el-notification is-info">
+      <code class="html">is-half</code>
+    </p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-one-fifth">
+    <p class="el-notification is-info">
+      <code class="html">is-one-fifth</code>
+    </p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+  <div class="column">
+    <p class="el-notification">Auto</p>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture columns_12 %}
+<div class="columns">
+  <div class="column is-2">
+    <p class="el-notification is-info"><code>is-2</code></p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-6">
+    <p class="el-notification is-info"><code>is-6</code></p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-warning has-text-centered">1</p>
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-11">
+    <p class="el-notification is-info"><code>is-11</code></p>
+  </div>
+  <div class="column">
+    <p class="el-notification is-success has-text-centered">1</p>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture columns_offset %}
+<div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+    <p class="el-notification is-info">
+      <code class="html">is-half</code><br>
+      <code class="html">is-offset-one-quarter</code>
+    </p>
+  </div>
+</div>
+
+<div class="columns is-mobile">
+  <div class="column is-4 is-offset-8">
+    <p class="el-notification is-info">
+      <code class="html">is-4</code><br>
+      <code class="html">is-offset-8</code>
+    </p>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture columns_narrow %}
+<div class="columns">
+  <div class="column is-narrow">
+    <div class="el-notification" style="width: 200px;">
+      <p class="title is-5">Narrow column</p>
+      <p class="subtitle">This column is only 200px wide.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="el-notification">
+      <p class="title is-5">Flexible column</p>
+      <p class="subtitle">This column will take up the remaining space available.</p>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">阵列系统</h1>
+
+    <div class="content">
+      <p>
+        <strong>Baobo.css</strong> 提供了一套响应式、移动设备优先的流式阵列布局系统。
+      </p>
+    </div>
+
+    {% include anchor.html name="列布局" %}
+
+    <div class="content">
+      <p>用 Baobo.css 创建一个基于<strong>列</strong>的布局非常简单：</p>
+      <ol>
+        <li>添加一个 <code>columns</code> 作为容器</li>
+        <li>根据需要添加 <code>column</code></li>
+      </ol>
+      <p>值得注意的是，在默认状态下无论有多少个 <code>column</code>，它们的宽度都是一致的。</p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <p class="el-notification is-info">First column</p>
+      </div>
+      <div class="column">
+        <p class="el-notification is-success">Second column</p>
+      </div>
+      <div class="column">
+        <p class="el-notification is-warning">Third column</p>
+      </div>
+      <div class="column">
+        <p class="el-notification is-danger">Fourth column</p>
+      </div>
+    </div>
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="尺寸" %}
+
+    <div class="content">
+      <p>当然你也可以非常轻松的定义某个 <code>column</code> 的尺寸：</p>
+      <ul>
+        <li>
+          <code>is-three-quarters</code>
+        </li>
+        <li>
+          <code>is-two-thirds</code>
+        </li>
+        <li>
+          <code>is-half</code>
+        </li>
+        <li>
+          <code>is-one-third</code>
+        </li>
+        <li>
+          <code>is-one-quarter</code>
+        </li>
+        <li>
+          <code>is-four-fifths</code>
+        </li>
+        <li>
+          <code>is-three-fifths</code>
+        </li>
+        <li>
+          <code>is-two-fifths</code>
+        </li>
+        <li>
+          <code>is-one-fifth</code>
+        </li>
+      </ul>
+      <p>其他列将 <strong>自动填充</strong> 剩余空间。</p>
+    </div>
+
+    {{columns_sizes}}
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_sizes }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="12 列栅格系统" %}
+
+    <div class="content">
+      <p>Baobo.css 也支持传统的 12 列栅格系统，每列都以 12 个列中你想要的列数来命名。所以，如果您需要 12 列中的 7 列，请使用 <code>is-7</code></p>
+      <ul>
+        <li><code>is-2</code></li>
+        <li><code>is-3</code></li>
+        <li><code>is-4</code></li>
+        <li><code>is-5</code></li>
+        <li><code>is-6</code></li>
+        <li><code>is-7</code></li>
+        <li><code>is-8</code></li>
+        <li><code>is-9</code></li>
+        <li><code>is-10</code></li>
+        <li><code>is-11</code></li>
+      </ul>
+    </div>
+
+    {{columns_12}}
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_12 }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="列偏移" %}
+
+    <div class="content">
+      <p>使用 <code>.is-offset-x</code> 类可以将列向右侧偏移。这些类实际是通过使用 <code>*</code> 选择器为当前元素增加了左侧的边距（margin）。例如，<code>.is-offset-4</code> 类将 <code>.is-8</code> 元素向右侧偏移了4个列（column）的宽度。</p>
+    </div>
+
+    {{ columns_offset }}
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_offset }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="窄列" %}
+
+    <div class="content">
+      <p>
+        如果您想要一列仅占用它<strong>所需</strong>的空间，而另一列将填满剩余的空间的话，请使用 <code>is-narrow</code> 修饰符。
+      </p>
+    </div>
+
+    {{ columns_narrow }}
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_narrow }}{% endhighlight %}
+    </div>
+
+  </div>
+</section>
