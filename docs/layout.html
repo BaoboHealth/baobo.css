@@ -8,34 +8,38 @@ doc-subtab: layout
 {% capture container_example %}
 <div class="container">
   <div class="notification">
-    This container is <strong>centered</strong> on desktop.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </div>
 </div>
 {% endcapture %}
 
-{% capture container_fluid_example %}
-<div class="container is-fluid">
-  <div class="notification">
-    This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
-    viewport size.
+{% capture nav_example %}
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Tweets</p>
+      <p class="title">3,456</p>
+    </div>
   </div>
-</div>
-{% endcapture %}
-
-{% capture container_widescreen_example %}
-<div class="container is-widescreen">
-  <div class="notification">
-    This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Following</p>
+      <p class="title">123</p>
+    </div>
   </div>
-</div>
-{% endcapture %}
-
-{% capture container_fullhd_example %}
-<div class="container is-fullhd">
-  <div class="notification">
-    This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Followers</p>
+      <p class="title">456K</p>
+    </div>
   </div>
-</div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Likes</p>
+      <p class="title">789</p>
+    </div>
+  </div>
+</nav>
 {% endcapture %}
 
 <section class="section">
@@ -70,20 +74,38 @@ doc-subtab: layout
 
 {% highlight html %}{{container_example}}{% endhighlight %}
 
-<div class="el-example is-fullwidth">
-  {{container_fluid_example}}
-</div>
+<section class="section">
+  <div class="container">
 
-{% highlight html %}{{container_fluid_example}}{% endhighlight %}
+    {% include anchor.html name="水平布局" %}
 
-<div class="el-example is-fullwidth">
-  {{container_widescreen_example}}
-</div>
+    <div class="content">
+      <p>
+        <strong>Baobo.css</strong> 同样提供了一个水平方向的布局容器，几乎可以放入任何组件。
+      </p>
+      <ul>
+        <li>
+          <code>level</code>
+          <ul>
+            <li><code>level-left</code></li>
+            <li>
+              <code>level-right</code>
+              <ul>
+                <li><code>level-item</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        在水平布局系统中，你可以插入几乎<strong>任何</strong>想要的内容：标题、按钮、文本输入框等。无论你在其中放置什么组件，它们都将始终处于<strong>垂直居中</strong>。
+      </p>
+      <p>
+        默认情况下，由于空间的限制，水平布局在移动设备上是垂直的。如果你希望水平布局在移动设备也上保持水平，请在 <code>.level</code> 的容器上添加 <code>is-mobile</code>。
+      </p>
+    </div>
 
-{% highlight html %}{{container_widescreen_example}}{% endhighlight %}
+    {% include snippet.html content=nav_example horizontal=true more=true %}
 
-<div class="el-example is-fullwidth">
-  {{container_fullhd_example}}
-</div>
-
-{% highlight html %}{{container_fullhd_example}}{% endhighlight %}
+  </div>
+</section>
