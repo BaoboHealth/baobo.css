@@ -18,6 +18,11 @@ doc-subtab: elements
 <a class="button is-success is-outlined">Outlined</a>
 {% endcapture %}
 
+{% capture tag %}
+<span class="tag">Tag label</span>
+<span class="tag is-rounded is-primary">Rounded</span>
+{% endcapture %}
+
 <section class="section">
   <div class="container">
     <h1 class="title">元素</h1>
@@ -53,6 +58,16 @@ doc-subtab: elements
         需要让按钮具有不同尺寸吗？使用 <code>.is-small</code>、<code>.is-medium</code> 或 <code>.is-large</code> 就可以获得不同尺寸的按钮。
       </p>
     </div>
+
+    {% include anchor.html name="标签" %}
+
+    <div class="content">
+      <p>
+        一个简单的标签。
+      </p>
+    </div>
+
+    {% include snippet.html content=tag %}
 
   </div>
 </section>
