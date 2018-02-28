@@ -1,0 +1,58 @@
+---
+layout: default
+route: elements
+fixed_navbar: true
+doc-subtab: elements
+---
+
+{% capture box_example %}
+<div class="box">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+{% endcapture %}
+
+{% capture button_example %}
+<a class="button">Button</a>
+<a class="button is-warning">Warning</a>
+<a class="button is-link is-rounded">Rounded</a>
+<a class="button is-success is-outlined">Outlined</a>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">元素</h1>
+
+    <div class="content">
+      <p>
+        <strong>Baobo.css</strong> 提供了一些基础的页面元素。
+      </p>
+    </div>
+
+    {% include anchor.html name="盒子" %}
+
+    <div class="content">
+      <p>
+        默认的 <code>.box</code> 组件所做的只是设置基本的边框（border）和内补（padding）来包含内容。
+      </p>
+    </div>
+
+    {% include snippet.html content=box_example %}
+
+    {% include anchor.html name="按钮" %}
+
+    <div class="content">
+      <p>
+        为 <code>a</code>、<code>button</code> 或 <code>input</code> 元素添加按钮类 <code>button</code> 即可使用 Baobo.css 提供的样式。
+      </p>
+    </div>
+
+    {% include snippet.html content=button_example %}
+
+    <div class="content">
+      <p>
+        需要让按钮具有不同尺寸吗？使用 <code>.is-small</code>、<code>.is-medium</code> 或 <code>.is-large</code> 就可以获得不同尺寸的按钮。
+      </p>
+    </div>
+
+  </div>
+</section>
