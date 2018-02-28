@@ -4,3 +4,37 @@ route: components
 fixed_navbar: true
 doc-subtab: components
 ---
+
+{% capture breadcrumb_example %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">促销</a></li>
+    <li><a href="#">春季特卖</a></li>
+    <li class="is-active"><a href="#" aria-current="page">服装</a></li>
+  </ul>
+</nav>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">组件</h1>
+
+    <div class="content">
+      <p>
+        <strong>Baobo.css</strong> 提供了一些基础的页面元素。
+      </p>
+    </div>
+
+    {% include anchor.html name="路径导航" %}
+
+    <div class="content">
+      <p>
+        <code>.breadcrumb</code> 是一个带有层次的导航组件，用于标明当前页面的位置，各路径间的分隔符已经自动通过 CSS 的 <code>::before</code> 属性添加了。
+      </p>
+    </div>
+
+    {% include snippet.html content=breadcrumb_example horizontal=true clipped=true %}
+
+  </div>
+</section>
